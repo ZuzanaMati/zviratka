@@ -1,0 +1,186 @@
+/*
+  Styly společné pro celou App zkopíruj do hlavního CSS.
+  Níže jsou pak styly pro jednotlivé komponenty.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* intuitivnejsi box model */
+html { box-sizing: border-box; }
+*, ::after, ::before { box-sizing: inherit; }
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* min-width: 100%; */
+  min-height: 100vh;
+  margin: 0;
+  padding: 1em;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('images/zoo.jpg');
+  background-position: center, center;
+  background-size: cover, cover;
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: fixed;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Merriweather', serif;
+}
+
+h1 {
+  margin: 30px 0;
+  font-size: 48px;
+  font-weight: 400;
+  text-align: center;
+  color: white;
+  text-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+.container {
+  max-width: 1100px;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  grid-gap: 30px;
+}
+
+
+/* komponenta AnimalList nepotřebuje žádné styly */
+
+
+/* styly pro komponentu Animal */
+.animal {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.93);
+  cursor: pointer;
+}
+
+.animal:hover {
+  background-color: #f2e7da;
+}
+
+.animal + .animal {
+  border-top: 1px solid #ddd;
+}
+
+.animal__image {
+  flex: 0 0 100px;
+}
+
+.animal__image img {
+  display: block;
+  width: 80px;
+  border-radius: 3px;
+}
+
+.animal__desc{
+  flex: 1;
+}
+
+.animal__name {
+  font-family: 'Merriweather', serif;
+  font-size: 18px;
+}
+
+.animal__latin {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: #888;
+}
+
+
+
+
+
+/* styly pro komponentu AnimalDetail */
+.detail {
+  background-color: white;
+}
+
+.detail__header {
+  position: relative;
+  height: 400px;
+}
+
+.detail__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detail__title {
+  position: absolute;
+  bottom: -30px;
+  left: 30px;
+  transform: rotate(-3deg);
+}
+
+.detail__name {
+  margin: 0;
+  font-family: 'Merriweather', serif;
+  font-size: 48px;
+  line-height: 1;
+}
+
+.detail__name span {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #b95818;
+  color: white;
+}
+
+.detail__latin {
+  margin: 5px 0 0 0;
+  font-family: 'Merriweather', serif;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.detail__latin span {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #930438;
+  color: white;
+}
+
+.detail__info {
+  padding: 50px 30px 30px 30px;
+
+}
+
+.detail__desc {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.detail__items {
+  margin: 30px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px 30px;
+}
+
+.detail__item h3,
+.detail__zoo h3 {
+  margin: 0 0 5px 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: #999;
+}
+
+.detail__item p,
+.detail__zoo p {
+  margin: 5px 0;
+}
